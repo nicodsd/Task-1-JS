@@ -44,8 +44,8 @@ const data={
         "capacity":8200,
         "estimate":8200,
         "price":3500
-       },
-       {
+      },
+      {
         "image":"https://i.postimg.cc/Gph6gdP3/comicon.jpg",
         "name":"Comicon",
         "date":"2021-02-12",
@@ -55,28 +55,28 @@ const data={
         "capacity":120000,
         "assistance":110000,
         "price":54
-       },
-       {
-          "image":"https://i.postimg.cc/RZ9fH4Pr/halloween.jpg",
-          "name":"Halloween Night",
-          "date":"2022-02-12",
-          "description":"Come with your scariest costume and win incredible prizes.",
-          "category":"Costume Party",
-          "place":"Room C",
-          "capacity":12000,
-          "estimate":9000,
-          "price":12
       },
       {
-          "image":"https://i.postimg.cc/XvQQr5C4/metallica-concert.jpg",
-          "name":"Metallica in concert",
-          "date":"2022-01-22",
-          "description":"The only concert of the most emblematic band in the world.",
-          "category":"Music Concert",
-          "place":"Room A"
-          ,"capacity":138000,
-          "estimate":138000,
-          "price":150
+        "image":"https://i.postimg.cc/RZ9fH4Pr/halloween.jpg",
+        "name":"Halloween Night",
+        "date":"2022-02-12",
+        "description":"Come with your scariest costume and win incredible prizes.",
+        "category":"Costume Party",
+        "place":"Room C",
+        "capacity":12000,
+        "estimate":9000,
+        "price":12
+      },
+      {
+        "image":"https://i.postimg.cc/XvQQr5C4/metallica-concert.jpg",
+        "name":"Metallica in concert",
+        "date":"2022-01-22",
+        "description":"The only concert of the most emblematic band in the world.",
+        "category":"Music Concert",
+        "place":"Room A",
+        "capacity":138000,
+        "estimate":138000,
+        "price":150
       },
       {
         "image":"https://i.postimg.cc/FRY8mpn2/electronic.jpg",
@@ -88,17 +88,17 @@ const data={
         "capacity":138000,
         "assistance":110300,
         "price":250
-        },
+      },
       {
-          "image":"https://i.postimg.cc/2V3FvcvY/10k-4life.jpg",
-          "name":"10K for life",
-          "date":"2021-03-01",
-          "description":"Come and exercise, improve your health and lifestyle.",
-          "category":"Race",
-          "place":"Campo de FutbÃ³l",
-          "capacity":30000,
-          "assistance":25698,
-          "price":3
+        "image":"https://i.postimg.cc/2V3FvcvY/10k-4life.jpg",
+        "name":"10K for life",
+        "date":"2021-03-01",
+        "description":"Come and exercise, improve your health and lifestyle.",
+        "category":"Race",
+        "place":"Campo de FutbÃ³l",
+        "capacity":30000,
+        "assistance":25698,
+        "price":3
       },
       {
         "image":"https://i.postimg.cc/LYR31mkQ/15kny.jpg",
@@ -110,17 +110,17 @@ const data={
         "capacity":3000000,
         "assistance":2569800,
         "price":3
-        },
+      },
       {
-          "image":"https://i.postimg.cc/34BWbTsq/school-bookfair.jpg",
-          "name":"School's book fair",
-          "date":"2022-10-15",
-          "description":"Bring your unused school book and take the one you need.",
-          "category":"Book Exchange",
-          "place":"Room D1",
-          "capacity":150000,
-          "estimate":123286,
-          "price":1
+        "image":"https://i.postimg.cc/34BWbTsq/school-bookfair.jpg",
+        "name":"School's book fair",
+        "date":"2022-10-15",
+        "description":"Bring your unused school book and take the one you need.",
+        "category":"Book Exchange",
+        "place":"Room D1",
+        "capacity":150000,
+        "estimate":123286,
+        "price":1
       },
       {
         "image":"https://i.postimg.cc/PxJKYqWZ/just4-kitchen.jpg",
@@ -145,15 +145,15 @@ const data={
         "price":225
       },
       {
-          "image":"https://i.postimg.cc/T3C92KTN/scale.jpg",
-          "name":"Avengers",
-          "date":"2022-10-15",
-          "description":"Marvel's Avengers Premier in 3d, the start of an epic saga with your favourite superheroes.",
-          "category":"Cinema",
-          "place":"Room D1",
-          "capacity":9000,
-          "estimate":9000,
-          "price":250
+        "image":"https://i.postimg.cc/T3C92KTN/scale.jpg",
+        "name":"Avengers",
+        "date":"2022-10-15",
+        "description":"Marvel's Avengers Premier in 3d, the start of an epic saga with your favourite superheroes.",
+        "category":"Cinema",
+        "place":"Room D1",
+        "capacity":9000,
+        "estimate":9000,
+        "price":250
       }
     ]
   }

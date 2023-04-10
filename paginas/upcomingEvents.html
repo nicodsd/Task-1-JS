@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../imagenes/LogoAmazingEvents.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../imagenes/favicon.png" type="image/x-icon">
     <title>Upcoming Events · AmazingEvents</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="../estilo/estilo.css">
@@ -13,14 +13,14 @@
       <header>
         <nav class="navbar navbar-expand-lg bg-body-secondary">
           <div class="container px-5 py-2">
-            <a class="navbar-brand" href="./index.html"><img class="logoCabecera" src="../imagenes/LogoAmazingEvents.png" alt="amazingEvents"></a>
+            <a class="navbar-brand" href="../index.html"><img class="logoCabecera" src="../imagenes/LogoAmazingEvents.png" alt="amazingEvents"></a>
             <button class="navbar-toggler border-danger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav ms-auto d-flex">
                 <a class="nav-link active text-danger btn border-danger m-2 mx-md-2" href="../index.html">Home</a>
-                <a class="nav-link active text-danger btn border-danger m-2" aria-current="page" href="#">Upcoming Events</a>
+                <a id="btn-page" class="nav-link active text-danger btn border-danger m-2" aria-current="page" href="#">Upcoming Events</a>
                 <a class="nav-link active text-danger btn border-danger m-2 mx-md-2" href="../paginas/pastEvent.html">Past Events</a>
                 <a class="nav-link active text-danger btn border-danger m-2" href="../paginas/contact.html">Contact</a>
                 <a class="nav-link active text-danger btn border-danger m-2 mx-md-2" href="../paginas/stats.html">Stats</a> 
@@ -29,85 +29,48 @@
           </div>
         </nav>
       </header>
-    <main>
+    <main id="main-post-events">
       <!-- CAROUSEL -->
-      <div id="carouselExample" class="carousel slide">
-        <div class="carousel-inner p-4 bg-danger d-flex justify-content-center">
-          <div class="carousel-item active">
-            <a href="#" class="col-5 d-flex justify-content-center"><h3>Upcoming Events</h3></a>
+      <div id="carousel" class="carousel slide container-fluid p-4 bg-danger d-flex">
+        <div class="container d-flex"> 
+          <div class="d-flex justify-content-start col-7 align-items-center">
+            <a id="arrowPast" class="d-flex align-items-center" href="../index.html"><img class="icon-arrow" src="../imagenes/5dc03fd4fe1cbd4752966aa3_Icon material-keyboard-arrow-right@2x (1).png" alt="next-icon"></a>
+            <h2 class="text-light d-flex justify-content-center mx-2" id="past">Home</h2>
           </div>
-          <div class="carousel-item">
-            <a href="../index.html" class="col-5 d-flex justify-content-center"><h3>Home</h3></a>
-          </div>
-          <div class="carousel-item">
-            <a href="../paginas/pastEvent.html" class="col-5 d-flex justify-content-center"><h3>Past Events</h3></a>
-          </div>
-          <div class="carousel-item">
-            <a href="../paginas/contact.html" class="col-5 d-flex justify-content-center"><h3>Contact</h3></a>
-          </div>
-          <div class="carousel-item">
-            <a href="../paginas/stats.html" class="col-5 d-flex justify-content-center"><h3>Stats</h3></a>
+          <div class="container d-flex justify-content-end col-5 align-items-center">
+            <h2 class="text-light d-flex justify-content-center mx-2">Past Events</h2>
+            <a class="d-flex align-items-center" href="../paginas/pastEvent.html"><img class="icon-arrow" src="/imagenes/5dc03fd4fe1cbd4752966aa3_Icon material-keyboard-arrow-right@2x (1) - copia.png" alt="next-icon"></a>
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
       </div>  
       <!-- FORM -->
       <section>
-        <div class="container my-4">
+        <div class="container-fluid mt-5 mb-md-4">
           <div class="row form d-flex align-items-center justify-content-center px-5 mt-lg-5">
-            <form class="col-12 col-sm-12 col-md-6">
-                <div class="form-check form-check-inline mt-5 mt-lg-0 p">
-                  <input class="form-check-input border-danger bg-body-secondary" type="checkbox" id="inlineCheckbox1" value="option1">
-                  <label class=" col-1 form-check-label" for="inlineCheckbox1">Category</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input border-danger bg-body-secondary" type="checkbox" id="inlineCheckbox2" value="option2">
-                  <label class=" col-1 form-check-label" for="inlineCheckbox2">Category</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input border-danger bg-body-secondary" type="checkbox" id="inlineCheckbox3" value="option3">
-                  <label class="col-1 form-check-label" for="inlineCheckbox3">Category</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input border-danger bg-body-secondary" type="checkbox" id="inlineCheckbox4" value="option3">
-                  <label class=" col-1 form-check-label" for="inlineCheckbox4">Category</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input border-danger bg-body-secondary" type="checkbox" id="inlineCheckbox5" value="option3">
-                  <label class=" col-1 form-check-label" for="inlineCheckbox5">Category</label>
-                </div>
-              </form>
-              <form class="py-4 d-flex col-12 col-sm-12 text- col-md-6" role="search">
-                <input class="form-control me-2 bg-body-secondary" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-danger" type="submit">Search</button>
+            <form class="form col-12 col-md-5" id="categorias"></form>
+              <form class="py-2 d-flex col-12 col-md-5" role="search">
+                <input id="search" autocomplete="off" class="form-control mb-4 mb-md-0" type="search" placeholder="Buscar evento" aria-label="Search">
               </form>
           </div>
         </div>
         <!-- CONTENEDOR CARTAS -->
-        <div id="eventos" class="container-fluid d-flex justify-content-center flex-wrap p-3 gap-3"></div>
+        <div id="eventos" class="container d-flex justify-content-center flex-wrap p-3 gap-3"></div>
       </section>
     </main>
-    <footer class="bg-danger d-flex p-1 text-light justify-content-evenly align-items-center">
-      <div class="d-flex my-3">
+    <footer class="container-fluid bg-danger p-2 text-light">
+      <div class="d-flex justify-content-around">
+        <div class="d-flex my-3">
           <div class="mx-2">
-              <box-icon type='logo' name='instagram' color='#ffffff'></box-icon>
+            <box-icon type="logo" name="instagram" color="#ffffff"></box-icon>
           </div>
           <div class="mx-2">
-              <box-icon name='facebook-square' type='logo' color='#ffffff'></box-icon>
+            <box-icon name="facebook-square" type="logo" color="#ffffff"></box-icon>
           </div>
           <div class="mx-2">
-              <box-icon type='logo' name='whatsapp' color='#ffffff'></box-icon>
+            <box-icon type="logo" name="whatsapp" color="#ffffff"></box-icon>
           </div>
-      </div>
-      <div class="col-8 d-flex justify-content-end">
-        <p>Cohort N046</p>
+        </div>
+        <p class="my-3">Cohort N046</p>
       </div>
     </footer>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
