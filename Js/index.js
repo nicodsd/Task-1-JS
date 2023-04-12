@@ -1,7 +1,7 @@
 const contenedor = document.getElementById("eventos");
 const eventos = data.eventos;
 const evento = eventos;
-let card = ``;
+let impresionPlantilla = eventos.map(agregarEventoAlHtml).join(' ');
 
 function agregarEventoAlHtml(evento) {
   let alt = evento.name.replace(/\s/g, `-`);
@@ -21,24 +21,21 @@ function agregarEventoAlHtml(evento) {
                 </div>
             </article>`;
 }
-for (let eventoHTML of eventos) {
-  card += agregarEventoAlHtml(eventoHTML);
-}
-contenedor.innerHTML = card;
 
+contenedor.innerHTML = impresionPlantilla;
 
 // variables filtro por categoria
-const contenedorCategorias = document.getElementById("categorias");
+const contenedorCategorias = document.getElementById("categorys");
 const categorias = data.eventos;
 let plantillaCategoria = "";
-let idCategoria = 1; // variable para id y for
+let idCategoria = 1; 
 const categoriasNoRepetidas = new Set();
 categorias.forEach((evento) => {
   if (!categoriasNoRepetidas.has(evento.category)) {
     // si la categoría no está en el Set, agregarla y añadir su plantilla
     categoriasNoRepetidas.add(evento.category);
     plantillaCategoria += `<div class="form">
-                                <input class="checkbox-categoria" onChange="filtrarPorCategorias()" id="categoria-${idCategoria}" checked: ""  name="${evento.name}" type="checkbox" id="inlineCheckbox1" value="${evento.category}">
+                                <input class="checkbox-category" onChange="filtrarPorCategorias()" id="${idCategoria}" checked: "" name="${evento.name}" type="checkbox" value="${evento.category}">
                                 <label class="form-check-label px-2" for="categoria-${idCategoria}">${evento.category}</label>
                             </div>`;
     idCategoria++; // aumenta el valor de idCategoria
@@ -48,9 +45,9 @@ categorias.forEach((evento) => {
 
 // función filtro por categoria
 function filtrarPorCategorias() {
-  const checkboxesCategorias = document.getElementsByClassName("checkbox-categoria");
+  const checkboxesCategorys = document.getElementsByClassName("checkbox-category");
   const categoriasSeleccionadas = [];
-  for (let checkbox of checkboxesCategorias) {
+  for (let checkbox of checkboxesCategorys) {
     if (checkbox.checked) {
       categoriasSeleccionadas.push(checkbox.value);
     }
@@ -58,7 +55,7 @@ function filtrarPorCategorias() {
   const textoBuscado = search.value.toLowerCase(); // se agrega el valor del search
   if (categoriasSeleccionadas.length === 0 && textoBuscado === "") {
     // si no hay categorías seleccionadas y el search está vacío, mostrar todos los eventos
-    contenedor.innerHTML = card;
+    contenedor.innerHTML = impresionPlantilla;
   } else {
     const eventosFiltradosPorCategoria = categoriasSeleccionadas.length === 0 ? eventos : eventos.filter((evento) =>
             categoriasSeleccionadas.includes(evento.category));
@@ -69,14 +66,13 @@ function filtrarPorCategorias() {
     // filtrar los eventos filtrados por categoría por el texto buscado
     const plantillaFiltrada = eventosFiltradosPorTexto.map(agregarEventoAlHtml).join(" ");
     contenedor.innerHTML = plantillaFiltrada;
-    if (eventosFiltrados.length === 0){contenedor.innerHTML = "<p>No se encuentra lo que andas buscando.</p>";
+    if (eventosFiltradosPorTexto.length === 0){contenedor.innerHTML = "<p>You can't find what you're looking for.</p>";
     }
   }
 }
 
 // mostrar en la pantalla
 contenedorCategorias.innerHTML = plantillaCategoria;
-
 
 
 // variable filtro por search
@@ -86,15 +82,14 @@ search.addEventListener("input", filtrarPorTexto);
 // funcion filtrar por search
 function filtrarPorTexto() {
   const textoBuscado = search.value.toLowerCase();
-  const checkboxesCategorias =
-    document.getElementsByClassName("checkbox-categoria");
+  const checkboxesCategorias = document.getElementsByClassName("checkbox-category");
   const categoriasSeleccionadas = [];
   for (let checkbox of checkboxesCategorias) {
     if (checkbox.checked) {
       categoriasSeleccionadas.push(checkbox.value);
     }
   }
-  const eventosFiltrados = eventos.filter(
+  const eventosFiltrados = evento.filter(
     (evento) =>
       (evento.name.toLowerCase().includes(textoBuscado) ||
         evento.description.toLowerCase().includes(textoBuscado)) &&
@@ -105,6 +100,6 @@ function filtrarPorTexto() {
   contenedor.innerHTML = plantillaFiltrada;
   if (eventosFiltrados.length === 0) {
     contenedor.innerHTML =
-      "<p>No se encuentra lo que andas buscando.</p>";
+      "<p>You can't find what you're looking for.</p>";
   }
 }

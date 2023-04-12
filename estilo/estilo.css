@@ -1,18 +1,20 @@
+/*----------------------------------*/
+body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+footer {
+  height: 11vh;
+  margin-top: auto;
+} 
+/*----------------------------------*/
 .logoCabecera {
   width: 7rem;
 }
 #carousel {
   height: 6rem;
 }
-
-main{
-    min-height: 72.5vh;
-}
-
-footer {
-  height: 11vh;
-} 
-
 .icon-arrow {
   height: 3.5vh;
 }
@@ -29,7 +31,6 @@ footer {
 }
 #article-card {
   box-shadow: #00000088 -40px -1px 60px -95px,#000000 -15px -1px 35px -25px;
-  
   height: 23.5rem;
   width: 15.5rem;
 }

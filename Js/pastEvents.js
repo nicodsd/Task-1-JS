@@ -1,10 +1,12 @@
 const contenedor = document.getElementById("eventos");
 const eventos = data.eventos;
 const evento = eventos;
-let card = ``;
+let impresionPlantilla = eventos.map(agregarEventoAlHtml).join(' ')
 
 function agregarEventoAlHtml(evento) {
   let alt = evento.name.replace(/\s/g, `-`);
+  const fechaActual = data.fechaActual;
+  if (fechaActual > evento.date){
   return `<article id="article-card" class="card col-6 col-sm-4 col-md-4 col-lg-2">
                 <div id="container-img-card">
                     <img src="${evento.image}" class="card-img-top object-fit-cover" id="image-cards" alt="${alt}">
@@ -21,10 +23,9 @@ function agregarEventoAlHtml(evento) {
                 </div>
             </article>`;
 }
-for (let eventoHTML of eventos) {
-  card += agregarEventoAlHtml(eventoHTML);
 }
-contenedor.innerHTML = card;
+
+contenedor.innerHTML = impresionPlantilla;
 
 
 // variables filtro por categoria
@@ -38,12 +39,13 @@ categorias.forEach((evento) => {
     // si la categoría no está en el Set, agregarla y añadir su plantilla
     categoriasNoRepetidas.add(evento.category);
     plantillaCategoria += `<div class="form">
-                                <input class="checkbox-categoria" onChange="filtrarPorCategorias()" id="categoria-${idCategoria}" checked: ""  name="${evento.name}" type="checkbox" id="inlineCheckbox1" value="${evento.category}">
+                                <input class="checkbox-categoria" onChange="filtrarPorCategorias()" id="${idCategoria}" checked: ""  name="${evento.name}" type="checkbox" id="inlineCheckbox1" value="${evento.category}">
                                 <label class="form-check-label px-2" for="categoria-${idCategoria}">${evento.category}</label>
                             </div>`;
     idCategoria++; // aumenta el valor de idCategoria
   }
 });
+
 
 
 // función filtro por categoria
@@ -58,7 +60,7 @@ function filtrarPorCategorias() {
   const textoBuscado = search.value.toLowerCase(); // se agrega el valor del search
   if (categoriasSeleccionadas.length === 0 && textoBuscado === "") {
     // si no hay categorías seleccionadas y el search está vacío, mostrar todos los eventos
-    contenedor.innerHTML = card;
+    contenedor.innerHTML = impresionPlantilla;
   } else {
     const eventosFiltradosPorCategoria = categoriasSeleccionadas.length === 0 ? eventos : eventos.filter((evento) =>
             categoriasSeleccionadas.includes(evento.category));
@@ -69,7 +71,7 @@ function filtrarPorCategorias() {
     // filtrar los eventos filtrados por categoría por el texto buscado
     const plantillaFiltrada = eventosFiltradosPorTexto.map(agregarEventoAlHtml).join(" ");
     contenedor.innerHTML = plantillaFiltrada;
-    if (eventosFiltrados.length === 0){contenedor.innerHTML = "<p>No se encuentra lo que andas buscando.</p>";
+    if (eventosFiltradosPorTexto.length === 0){contenedor.innerHTML = "<p>No se encuentra lo que andas buscando.</p>";
     }
   }
 }
@@ -101,7 +103,7 @@ function filtrarPorTexto() {
       (categoriasSeleccionadas.length === 0 ||
         categoriasSeleccionadas.includes(evento.category))
   );
-  const plantillaFiltrada = eventosFiltrados.map(agregarEventoAlHtml).join(" ");
+  const plantillaFiltrada = eventosFiltrados.map(agregarEventoAlHtml).join(' ');
   contenedor.innerHTML = plantillaFiltrada;
   if (eventosFiltrados.length === 0) {
     contenedor.innerHTML =
